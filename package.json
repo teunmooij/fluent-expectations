@@ -4,7 +4,11 @@
   "description": "Fluent expectations library for Node tests",
   "main": "dist/index.js",
   "scripts": {
-    "test": "jest"
+    "build": "rimraf dist && tsc",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --quiet --fix",
+    "test": "jest -c jest.config.js",
+    "test:coverage": "jest -c jest.config.js --verbose --collectCoverage"
   },
   "repository": {
     "type": "git",
@@ -16,7 +20,6 @@
     "url": "https://github.com/teunmooij/fluent-expectations/issues"
   },
   "homepage": "https://github.com/teunmooij/fluent-expectations#readme",
-  "dependencies": {},
   "devDependencies": {
     "@types/jest": "^28.1.4",
     "@typescript-eslint/eslint-plugin": "^5.30.3",
@@ -32,6 +35,7 @@
     "jest": "^28.1.2",
     "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
+    "rimraf": "^3.0.2",
     "ts-jest": "^28.0.5",
     "typescript": "^4.7.4"
   },
