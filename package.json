@@ -3,6 +3,7 @@
   "version": "0.0.1",
   "description": "Fluent expectations library for Node tests",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
     "build": "rimraf dist && tsc",
     "lint": "eslint src/**/*.ts",
@@ -21,6 +22,7 @@
   },
   "homepage": "https://github.com/teunmooij/fluent-expectations#readme",
   "devDependencies": {
+    "fluent-expectations": ".",
     "@types/jest": "^28.1.4",
     "@typescript-eslint/eslint-plugin": "^5.30.3",
     "@typescript-eslint/parser": "^5.30.3",

@@ -1,5 +1,5 @@
 // eslint-disable-next-line @typescript-eslint/no-var-requires
-const { assert } = require('../dist');
+const { assert } = require('./assert');
 
 String.prototype.__defineGetter__('should', function () {
   return assert(this.valueOf());

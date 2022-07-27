@@ -3,7 +3,7 @@ module.exports = {
   testRegex: 'test/.*(unittest|mocktest|test|spec)\\.ts$',
   collectCoverageFrom: ['src/**/*.ts'],
   coveragePathIgnorePatterns: [],
-  setupFilesAfterEnv: ['./test/setup.js'],
+  setupFilesAfterEnv: [], // extensions go here
   testMatch: null,
   preset: 'ts-jest',
 };
