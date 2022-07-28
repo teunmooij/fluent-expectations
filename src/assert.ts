@@ -5,6 +5,7 @@ type And<T> = {
 export type Assert<T> = {
   be: (expected: T, reason?: string) => And<T>;
   equal: (expected: T, reason?: string) => And<T>;
+  not: Assert<T>;
 };
 
 const and = <T>(actual: T) => ({
