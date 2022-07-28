@@ -3,13 +3,14 @@ type And<T> = {
 };
 
 export type Assert<T> = {
+  not: Assert<T>;
   be: (expected: T, reason?: string) => And<T>;
   equal: (expected: T, reason?: string) => And<T>;
 };
 
 const and = <T>(actual: T) => ({
   get and() {
-    return assert<T>(actual);
+    return assertThat<T>(actual);
   },
 });
 
@@ -26,7 +27,7 @@ const stripErrorLocation = (error: Error) => {
   return error;
 };
 
-export const assert = <T>(actual: T, reverse = false) => {
+export const assertThat = <T>(actual: T, reverse = false) => {
   return {
     be: (expected: T, reason?: string) => {
       const same = actual === expected;
@@ -54,7 +55,7 @@ export const assert = <T>(actual: T, reverse = false) => {
       return and(actual);
     },
     get not() {
-      return assert(actual, !reverse);
+      return assertThat(actual, !reverse);
     },
   };
 };

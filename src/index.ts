@@ -1,5 +1,5 @@
 import './extend';
-import { Assert, assert } from './assert';
+import { Assert, assertThat } from './assert';
 
 declare global {
   interface String {
@@ -19,6 +19,6 @@ declare global {
   }
 }
 
-export { assert } from './assert';
-export const optional = assert;
-export const nullable = assert;
+export { assertThat as assert } from './assert';
+export const optional = assertThat;
+export const nullable = assertThat;
